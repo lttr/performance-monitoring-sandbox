@@ -1,0 +1,20 @@
+{
+  "name": "lighthouse-ci",
+  "private": true,
+  "scripts": {
+    "lhci:local-audit": "run-p 'lhci:server' 'lhci:run'",
+    "lhci:run": "run-s 'lhci:desktop' 'lhci:mobile' 'lhci:upload'",
+    "lhci:desktop": "env-cmd lhci collect --additive --config=./lighthouserc-desktop.js",
+    "lhci:mobile": "env-cmd lhci collect --additive --config=./lighthouserc-mobile.js",
+    "lhci:upload": "env-cmd lhci upload",
+    "lhci:wizard": "env-cmd lhci wizard",
+    "lhci:server": "env-cmd lhci server"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0",
+    "@lhci/server": "^0.13.0",
+    "env-cmd": "^10.1.0",
+    "npm-run-all": "^4.1.5",
+    "sqlite3": "^5.1.7"
+  }
+}
