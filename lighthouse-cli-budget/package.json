@@ -1,0 +1,10 @@
+{
+  "name": "lighthouse-cli-budget",
+  "private": true,
+  "scripts": {
+    "test": "lighthouse https://lukastrumm.com --output json --output html --budget-path=./performance-budget.json --only-categories=performance,accessibility,best-practices,seo"
+  },
+  "devDependencies": {
+    "lighthouse": "^11.7.0"
+  }
+}
